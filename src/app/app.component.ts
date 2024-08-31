@@ -7,18 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   sauf = -1;
-  saufen = [
-    'Lüzli',
-    'Pieti',
-    'Yäne',
-    'LX',
-    'Sime',
-    'Schösche',
-    'Pancho',
-    'Timmeli',
-  ];
+  saufen = ['Lüzli', 'Yäne', 'LX', 'Pieti', 'Sime', 'Timmeli', 'Schösche'];
 
   changeSauf() {
-    this.sauf = Math.floor(Math.random() * 8);
+    let newSauf = Math.floor(Math.random() * 4) + Math.floor(Math.random() * 5);
+    while (newSauf == this.sauf) {
+      newSauf = Math.floor(Math.random() * 4) + Math.floor(Math.random() * 5);
+    }
+    this.sauf = newSauf;
   }
 }
